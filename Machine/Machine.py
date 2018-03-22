@@ -7,7 +7,6 @@ class Machine:
 
     def __init__(self, state: State):
         """[summary]
-        
         Arguments:
             start {State} -- [description]
         """

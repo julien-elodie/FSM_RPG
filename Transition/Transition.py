@@ -7,7 +7,6 @@ class Transition:
 
     def __init__(self, source: State, trigger: PassiveEvent, target: State):
         """[summary]
-        
         Arguments:
             source {State} -- [description]
             trigger {PassiveEvent} -- [description]

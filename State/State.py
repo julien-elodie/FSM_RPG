@@ -8,7 +8,6 @@ class State:
 
     def __init__(self, name: str = "State"):
         """[summary]
-        
         Keyword Arguments:
             name {str} -- [description] (default: {"State"})
         """
@@ -20,7 +19,6 @@ class State:
 
     def addActive(self, active: ActiveEvent):
         """[summary]
-        
         Arguments:
             active {ActiveEvent} -- [description]
         """
@@ -37,20 +35,17 @@ class State:
 
     def addTransition(self, passive: PassiveEvent, target: State):
         """[summary]
-        
         Arguments:
             passive {PassiveEvent} -- [description]
             target {State} -- [description]
         """
-        self._Transitions[passive.getName] = Transition(
-            self, passive, target)
+        self._Transitions[passive.getName] = Transition(self, passive, target)
 
     def getAllTargets(self):
         return [_.getTarget() for _ in self._Transitions.values()]
-    
+
     def hasTransition(self, name: str):
         """[summary]
-        
         Arguments:
             name {str} -- [description]
         """
@@ -58,7 +53,6 @@ class State:
 
     def getTarget(self, name: str):
         """[summary]
-        
         Arguments:
             name {str} -- [description]
         """

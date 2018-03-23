@@ -43,5 +43,5 @@ class Machine:
             self._ResetEvents.append(passive)
 
     def isResetEvent(self, name: str):
-        # TODO
-        pass
+        resetCodes = [re.getName() for re in self._ResetEvents]
+        return name in resetCodes

@@ -3,13 +3,13 @@ class Event:
 
     def __init__(self, name: str = "Event"):
         """[summary]
-        
+
         Keyword Arguments:
             name {str} -- [description] (default: {"Event"})
         """
         super(Event, self).__init__()
         self._Name = name
-        self._Func = self._defaultFunc()
+        self._Func = self._defaultFunc
 
     def getName(self):
         return self._Name
@@ -24,5 +24,7 @@ class Event:
         self._Func = func if func else self._defaultFunc
 
     def _defaultFunc(self):
-        """This is an default function."""
-        pass
+        print("This is an default function.")
+
+    def executeEvent(self):
+        self._Func()

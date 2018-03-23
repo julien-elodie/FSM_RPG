@@ -11,13 +11,18 @@ class PassiveEvent(Event):
                      "del": "Event Finished!"
                  }):
         """[summary]
-        
+
         Keyword Arguments:
             name {str} -- [description] (default: {"PassiveEvent"})
-            doc {dict} -- [description] (default: {{"new": "A new PassiveEvent!","del": "Event Finished!"}})
+            doc {dict} -- [description] (default: {
+                {
+                    "new": "A new PassiveEvent!",
+                    "del": "Event Finished!"
+                }
+            })
         """
         self._Doc = doc
         print(self._Doc.get("new"))
         self._Name = name
-        self._Func = self._defaultFunc()
+        self._Func = self._defaultFunc
         print(self._Doc.get("del"))

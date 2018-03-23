@@ -11,13 +11,20 @@ class ActiveEvent(Event):
                      "del": "Event Finished!"
                  }):
         """[summary]
-        
         Keyword Arguments:
             name {str} -- [description] (default: {"ActiveEvent"})
-            doc {dict} -- [description] (default: {{"new": "A new ActiveEvent!","del": "Event Finished!"}})
+            doc {dict} -- [description] (default: {
+                {
+                    "new": "A new ActiveEvent!",
+                    "del": "Event Finished!"
+                }
+            })
         """
         self._Doc = doc
-        print(self._Doc.get("new"))
         self._Name = name
-        self._Func = self._defaultFunc()
+        self._Func = self._defaultFunc
+
+    def executeEvent(self):
+        print(self._Doc.get("new"))
+        self._Func()
         print(self._Doc.get("del"))

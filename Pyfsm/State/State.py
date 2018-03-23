@@ -33,7 +33,7 @@ class State:
         else:
             self._Passives.append(passive)
 
-    def addTransition(self, passive: PassiveEvent, target: State):
+    def addTransition(self, passive: PassiveEvent, target):
         """[summary]
         Arguments:
             passive {PassiveEvent} -- [description]

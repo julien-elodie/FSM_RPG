@@ -4,25 +4,11 @@ from .Event import Event
 class PassiveEvent(Event):
     """docstring for PassiveEvent."""
 
-    def __init__(self,
-                 name: str = "PassiveEvent",
-                 doc: dict = {
-                     "new": "A new PassiveEvent!",
-                     "del": "Event Finished!"
-                 }):
+    def __init__(self, name: str = "PassiveEvent", code: str = "Code"):
         """[summary]
-
         Keyword Arguments:
             name {str} -- [description] (default: {"PassiveEvent"})
-            doc {dict} -- [description] (default: {
-                {
-                    "new": "A new PassiveEvent!",
-                    "del": "Event Finished!"
-                }
-            })
+            code {str} -- [description] (default: {"Code"})
         """
-        self._Doc = doc
-        print(self._Doc.get("new"))
-        self._Name = name
-        self._Func = self._defaultFunc
-        print(self._Doc.get("del"))
+        super(PassiveEvent, self).__init__()
+        Event.__init__(self, name=name, code=code)

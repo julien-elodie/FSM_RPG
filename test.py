@@ -1,13 +1,11 @@
-from Pyfsm.Event import ActiveEvent
+from Pyfsm import Generator
+from Pyfsm import Controller
 
 
 def main():
-    door = ActiveEvent(
-        name="door", doc={
-            "new": "Door is open",
-            "del": "Door is close"
-        })
-    door.executeEvent()
+    machine = Generator().generatorMachine()
+    control = Controller(machine)
+    control.handle("Open")
 
 
 if __name__ == '__main__':

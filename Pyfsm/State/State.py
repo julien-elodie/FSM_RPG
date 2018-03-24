@@ -13,25 +13,41 @@ class State:
         """
         super(State, self).__init__()
         self._Name = name
-        self._Actives = []
-        self._Passives = []
+        self._Actives = {}
+        self._Passives = {}
+        self._Binds = {}
         self._Transitions = {}
+
+    def getName(self):
+        return self._Name
+
+    def getActive(self, name: str):
+        return self._Actives.get(name)
+
+    def getPassive(self, name: str):
+        return self._Passives.get(name)
+
+    def addBind(self, active: ActiveEvent, passive: PassiveEvent):
+        self._Binds[active] = passive
+
+    def getBind(self, active: ActiveEvent):
+        return self._Binds[active]
 
     def addActive(self, active: ActiveEvent):
         """[summary]
         Arguments:
             active {ActiveEvent} -- [description]
         """
-        if active in self._Actives:
+        if active.getName() in self._Actives.keys():
             return
         else:
-            self._Actives.append(active)
+            self._Actives[active.getName()] = active
 
     def addPassive(self, passive: PassiveEvent):
-        if passive in self._Passives:
+        if passive.getName() in self._Passives.keys():
             return
         else:
-            self._Passives.append(passive)
+            self._Passives[passive.getName()] = passive
 
     def addTransition(self, passive: PassiveEvent, target):
         """[summary]
@@ -39,7 +55,8 @@ class State:
             passive {PassiveEvent} -- [description]
             target {State} -- [description]
         """
-        self._Transitions[passive.getName] = Transition(self, passive, target)
+        self._Transitions[passive.getName()] = Transition(
+            self, passive, target)
 
     def getAllTargets(self):
         return [_.getTarget() for _ in self._Transitions.values()]
@@ -60,4 +77,4 @@ class State:
 
     # TODO
     def executeActions(self):
-        pass
+        print(self.getName())

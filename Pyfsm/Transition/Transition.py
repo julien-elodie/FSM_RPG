@@ -34,5 +34,3 @@ class Transition:
 
     def setTarget(self, target: State):
         self._Target = target
-
-    # TODO

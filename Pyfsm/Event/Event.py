@@ -1,30 +1,24 @@
 class Event:
     """docstring for Event."""
 
-    def __init__(self, name: str = "Event"):
+    def __init__(self, name: str = "Event", code: str = "Code"):
         """[summary]
-
         Keyword Arguments:
             name {str} -- [description] (default: {"Event"})
+            code {str} -- [description] (default: {"Code"})
         """
         super(Event, self).__init__()
         self._Name = name
-        self._Func = self._defaultFunc
+        self._Code = code
 
     def getName(self):
         return self._Name
 
-    def setName(self, name: str):
+    def _setName(self, name: str):
         self._Name = name
 
-    def getFunc(self):
-        return self._Func
+    def getCode(self):
+        return self._Code
 
-    def setFunc(self, func):
-        self._Func = func if func else self._defaultFunc
-
-    def _defaultFunc(self):
-        print("This is an default function.")
-
-    def executeEvent(self):
-        self._Func()
+    def _setCode(self, code: str):
+        self._Code = code

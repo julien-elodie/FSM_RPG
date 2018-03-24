@@ -11,8 +11,15 @@ class Controller:
         self._Machine = machine
         # TODO
 
+    def getCurrentState(self):
+        return self._CurrentState
+
     def handle(self, name: str):
-        if self._CurrentState.HasTransition(name):
+        print(self._CurrentState.getActive(name).getCode())
+        if self._CurrentState.hasTransition(name):
+            print(
+                self._CurrentState.getPassive(
+                    self._CurrentState.getBind(name)).getCode())
             self.transitionTo(self._CurrentState.getTarget(name))
             return
         if self._Machine.isResetEvent(name):

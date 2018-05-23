@@ -1,80 +1,70 @@
-from ..Event import ActiveEvent
-from ..Event import PassiveEvent
-from ..Transition import Transition
+import json
+
+from ..Error import UncorrectAttrError
 
 
-class State:
+class Attr(object):
+    """docstring for Attr."""
+
+    def __init__(self, name=None, value=None, attr={}):
+        super(Attr, self).__init__()
+        try:
+            if name and value:
+                self._name = name
+                self.update(name=name, value=value)
+            elif attr:
+                self._name = list(attr.keys())[0]
+                self.update(attr=attr)
+            else:
+                raise UncorrectAttrError("UncorrectAttribute!")
+        except UncorrectAttrError as error:
+            print(error.errorinfo)
+
+    def update(self, name=None, value=None, attr={}):
+        try:
+            if name and value:
+                self._update(name, value)
+            elif value:
+                self._update(self._name, value)
+            elif attr:
+                self._update(self._name, attr[self._name])
+        except Exception as error:
+            print(error)
+
+    def _update(self, name=None, value=None):
+        try:
+            getattr(self, name)
+        except AttributeError as error:
+            print(error)
+        else:
+            setattr(self, name, value)
+
+    def output(self):
+        try:
+            ret = {self._name, getattr(self, self._name)}
+        except Exception as error:
+            print(error)
+        else:
+            ret = {}
+        finally:
+            return ret
+
+
+class State(object):
     """docstring for State."""
 
-    def __init__(self, name: str = "State"):
-        """[summary]
-        Keyword Arguments:
-            name {str} -- [description] (default: {"State"})
-        """
+    def __init__(self, name):
         super(State, self).__init__()
-        self._Name = name
-        self._Actives = {}
-        self._Passives = {}
-        self._Binds = {}
-        self._Transitions = {}
+        self._name = name
+        self.attrList = set()
 
-    def getName(self):
-        return self._Name
+    def updateAttrs(self, attrs={}):
+        for name in attrs.keys():
+            self.attrList.add(name)
+            setattr(self, name, attrs[name])
 
-    def getActive(self, name: str):
-        return self._Actives.get(name)
-
-    def getPassive(self, name: str):
-        return self._Passives.get(name)
-
-    def addBind(self, active: ActiveEvent, passive: PassiveEvent):
-        self._Binds[active] = passive
-
-    def getBind(self, active: ActiveEvent):
-        return self._Binds[active]
-
-    def addActive(self, active: ActiveEvent):
-        """[summary]
-        Arguments:
-            active {ActiveEvent} -- [description]
-        """
-        if active.getName() in self._Actives.keys():
-            return
-        else:
-            self._Actives[active.getName()] = active
-
-    def addPassive(self, passive: PassiveEvent):
-        if passive.getName() in self._Passives.keys():
-            return
-        else:
-            self._Passives[passive.getName()] = passive
-
-    def addTransition(self, passive: PassiveEvent, target):
-        """[summary]
-        Arguments:
-            passive {PassiveEvent} -- [description]
-            target {State} -- [description]
-        """
-        self._Transitions[passive.getName()] = Transition(
-            self, passive, target)
-
-    def getAllTargets(self):
-        return [_.getTarget() for _ in self._Transitions.values()]
-
-    def hasTransition(self, name: str):
-        """[summary]
-        Arguments:
-            name {str} -- [description]
-        """
-        return name in self._Transitions.keys()
-
-    def getTarget(self, name: str):
-        """[summary]
-        Arguments:
-            name {str} -- [description]
-        """
-        return self._Transitions.get(name).getTarget()
-
-    # TODO
-    def executeActions(self):
-        print(self.getName())
+    def outputAttrs(self):
+        ret = {}
+        for name in self.attrList:
+            ret[name] = getattr(self, name)
+        return ret

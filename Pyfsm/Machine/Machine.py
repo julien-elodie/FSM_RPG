@@ -1,47 +1,23 @@
-from ..State import State
-from ..Event import PassiveEvent
+import functools
+import sys
 
 
-class Machine:
+class Machine(object):
     """docstring for Machine."""
 
-    def __init__(self, state: State):
-        """[summary]
-        Arguments:
-            start {State} -- [description]
-        """
+    def __init__(self, name):
         super(Machine, self).__init__()
-        self._State = state
-        self._ResetEvents = []
+        self._name = name
 
-    def getState(self):
-        return self._State
+    def start(self, initState):
+        self._state = initState
 
-    def setState(self, state: State):
-        self._State = state
+    def updateState(self, state):
+        self._state = state
 
-    def getAllStates(self):
-        result = []
-        self.collectStates(result, self._State)
-        return result
-
-    def collectStates(self, result: list, state: State):
-        if state in result:
-            return
-        else:
-            result.append(state)
-        for target in state.getAllTargets():
-            self.collectStates(result, target)
-
-    def addResetEvent(self, passive: PassiveEvent):
-        for state in self.getAllStates():
-            if state.hasTransition(passive.getName()):
-                continue
-            state.addTransition(passive, self._State)
-            if passive in self._ResetEvents:
-                continue
-            self._ResetEvents.append(passive)
-
-    def isResetEvent(self, name: str):
-        resetCodes = [re.getName() for re in self._ResetEvents]
-        return name in resetCodes
+    @classmethod
+    def updateAction(cls, func):
+        @functools.wraps(func)
+        def dummy(*args, **kwargs):
+            func(*args, **kwargs)
+        setattr(cls, func.__name__, dummy)

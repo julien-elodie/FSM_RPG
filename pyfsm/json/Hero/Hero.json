@@ -22,6 +22,7 @@
     },
     "Actions": {
         "Active": ["attack", "appear"],
-        "Passive": ["hurt", "defeated", "victory", "exp", "level"]
+        "Passive": ["hurt", "defeated", "victory", "exp", "level"],
+        "Special": []
     }
 }

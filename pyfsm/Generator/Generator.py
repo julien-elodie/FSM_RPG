@@ -30,4 +30,8 @@ class Generator(object):
         for passive in self._json.get("Actions").get("Passive"):
             passive = getattr(sys.modules[__name__], passive)
             machine.updateAction(passive)
+        # Special
+        for special in self._json.get("Actions").get("Special"):
+            special = getattr(sys.modules[__name__], special)
+            machine.updateAction(special)
         return machine

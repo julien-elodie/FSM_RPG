@@ -1,14 +1,44 @@
 from ..Action import Action
-from ..Helper import levelupRequiredExp, modifyPrint
+from ..Helper import (Logger, abilityModifiers, castDice, levelupRequiredExp,
+                      modifyPrint)
 
 
 # Active
 @Action(name="Attack")
 def attack(self, target):
-    damage = self._state.Str
-    modifyPrint([self._name, "attacks", target._name + ",",
-                 "inflicting", str(damage), "damage."])
-    target.hurt(initiator=self, damage=damage)
+    # Attack Roll
+    ret = castDice("1d20")
+    if ret == 1:
+        modifyPrint(["Doom!", self._name + "'s", "Attack", "missed."])
+        hit = False
+    elif ret == 20:
+        modifyPrint(["Good Luck!", self._name,
+                     "will take a excellent Attack!"])
+        hit = True
+    else:
+        # Determine modifiers
+        # Ability Modifier
+        ret = ret + abilityModifiers(self._state.Str)
+        # Proficiency Bonus @Philous 暂无
+        # 与AC(护甲等级)比较
+        ArmorClass = 10 + abilityModifiers(target._state.Dex)
+        if ret >= ArmorClass:
+            modifyPrint([self._name + "'s", "Attack", "hit."])
+            hit = True
+        else:
+            modifyPrint([self._name + "'s", "Attack", "missed."])
+            hit = False
+    # Resolve the attack
+    if hit:
+        # TODO @Philous 武器输出未正确给出
+        damage = castDice("1d8") + abilityModifiers(self._state.Str)
+        if damage < 0:
+            # 防止出现伤害为负
+            damage = 0
+        Logger.timestamp()
+        modifyPrint(["[Attack]", self._name, "attacks", target._name + ",",
+                     "inflicting", str(damage), "damage."])
+        target.hurt(initiator=self, damage=damage)
 
 
 @Action(name="Appear")
@@ -53,3 +83,6 @@ def level(self, requiredExp):
     self._state.Level += 1
     modifyPrint([self._name, "get to level", str(self._state.Level)])
     # TODO @Philous： 升级加点
+
+
+# Special

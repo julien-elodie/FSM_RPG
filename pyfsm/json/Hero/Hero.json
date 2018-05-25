@@ -1,0 +1,27 @@
+{
+    "Name": "Hero",
+    "States": {
+        "init": {
+            "Name": "init",
+            "Attr": {
+                "Hp": 10,
+                "Mp": 10,
+                "Level": 1,
+                "Exp": 0,
+                "Str": 10,
+                "Dex": 10,
+                "Con": 10,
+                "Int": 10,
+                "Wis": 10,
+                "Cha": 10,
+                "Money": 100
+            },
+            "Buff": null,
+            "Debuff": null
+        }
+    },
+    "Actions": {
+        "Active": ["attack", "appear"],
+        "Passive": ["hurt", "defeated", "victory", "exp", "level"]
+    }
+}

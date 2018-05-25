@@ -1,5 +1,4 @@
 import functools
-import sys
 
 
 class Machine(object):

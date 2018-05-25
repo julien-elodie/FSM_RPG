@@ -1,11 +1,9 @@
-from pyfsm import Generator
+from pyfsm import System
 
 
 def main():
-    generator = Generator()
-    generator.loadConfig(filepath="./pyfsm/json/Hero.json")
-    Hero = generator.generate()
-    Hero.attack(target=Hero)
+    system = System()
+    system.Start()
 
 if __name__ == '__main__':
-    main()
+    main() 

@@ -1,0 +1,27 @@
+{
+    "Name": "Slime",
+    "States": {
+        "init": {
+            "Name": "init",
+            "Attr": {
+                "Hp": 5,
+                "Mp": 0,
+                "Level": 1,
+                "Exp": 5,
+                "Str": 1,
+                "Dex": 1,
+                "Con": 1,
+                "Int": 1,
+                "Wis": 1,
+                "Cha": 1,
+                "Money": null
+            },
+            "Buff": null,
+            "Debuff": null
+        }
+    },
+    "Actions": {
+        "Active": ["attack", "appear"],
+        "Passive": ["hurt", "defeated"]
+    }
+}

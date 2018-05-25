@@ -1,7 +1,7 @@
 import json
 import sys
 
-from ..Action.Common import attack, hurt
+from ..Action.Common import appear, attack, defeated, exp, hurt, level, victory
 from ..Machine import Machine
 from ..State import State
 

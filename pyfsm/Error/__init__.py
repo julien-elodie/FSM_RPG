@@ -1,3 +1,3 @@
-from .CustomError import UncorrectAttrError
+from .CustomError import UncorrectAttrError, EmptyHerosOrMonstersError
 
-__all__ = ["UncorrectAttrError"]
+__all__ = ["UncorrectAttrError", "EmptyHerosOrMonstersError"]

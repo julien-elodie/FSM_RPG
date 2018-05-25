@@ -14,14 +14,15 @@
                 "Int": 10,
                 "Wis": 10,
                 "Cha": 10,
-                "Money": 100
+                "Money": 100,
+                "HpDice": "1d10"
             },
             "Buff": null,
             "Debuff": null
         }
     },
     "Actions": {
-        "Active": ["attack", "appear"],
+        "Active": ["attack", "appear", "rest"],
         "Passive": ["hurt", "defeated", "victory", "exp", "level"],
         "Special": []
     }

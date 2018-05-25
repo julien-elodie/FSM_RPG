@@ -3,7 +3,11 @@ from ..Helper import (Logger, abilityModifiers, castDice, levelupRequiredExp,
                       modifyPrint)
 
 
-# Active
+"""Active
+主动技能
+"""
+
+
 @Action(name="Attack")
 def attack(self, target):
     # Attack Roll
@@ -46,7 +50,22 @@ def appear(self):
     modifyPrint([self._name, "appears."])
 
 
-# Passive
+@Action(name="Rest")
+def rest(self):
+    # 治疗投掷
+    recovery = castDice(mode=self._state.HpDice)
+    # 防止超量治疗
+    preHp = self._state.Hp
+    maxHp = int(self._state.HpDice.split(
+        "d")[-1]) + abilityModifiers(self._state.Con)
+    self._state.Hp = min(preHp + recovery, maxHp)
+    modifyPrint([self._name, "recovered", str(self._state.Hp - preHp), "Hp."])
+
+"""Passive
+被动技能
+"""
+
+
 @Action(name="Hurt")
 def hurt(self, initiator, damage):
     modifyPrint([self._name, "suffered", str(damage), "damage."])
@@ -72,17 +91,18 @@ def victory(self):
 def exp(self, value):
     modifyPrint([self._name, "gain", str(value), "exp."])
     self._state.Exp += value
-    requiredExp = levelupRequiredExp(level=self._state.Level)
+    requiredExp=levelupRequiredExp(level=self._state.Level + 1)
     if self._state.Exp >= requiredExp:
-        self.level(requiredExp=requiredExp)
+        self.level()
 
 
 @Action(name="Level")
-def level(self, requiredExp):
-    self._state.Exp -= requiredExp
+def level(self):
     self._state.Level += 1
     modifyPrint([self._name, "get to level", str(self._state.Level)])
     # TODO @Philous： 升级加点
 
 
-# Special
+"""Special
+特殊技能
+"""

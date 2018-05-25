@@ -4,7 +4,7 @@ from ..Helper import Logger
 
 
 class Action(object):
-    """docstring for Action."""
+    """对象动作函数装饰器类"""
 
     def __init__(self, name):
         super(Action, self).__init__()

@@ -1,18 +1,24 @@
 import json
 import sys
 
-from ..Action.Common import appear, attack, defeated, exp, hurt, level, victory
+from ..Action.Common import appear, attack, defeated, exp, hurt, level, victory, rest
 from ..Machine import Machine
 from ..State import State
 
 
 class Generator(object):
-    """docstring for Generator."""
+    """对象自动化生成生成类"""
 
     def __init__(self):
         super(Generator, self).__init__()
 
     def loadConfig(self, filepath):
+        """通过对象描述文件生成对象
+        
+        Arguments:
+            filepath {str} -- 对象描述文件路径
+        """
+
         with open(filepath, 'r') as Config:
             self._json = json.load(Config)
 

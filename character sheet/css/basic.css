@@ -1,0 +1,114 @@
+.BasicInfo {
+    background-image: url(../img/sheet1/CharacterSheet_01.gif);
+    background-size: auto;
+    width: 2469px;
+    height: 434px;
+}
+
+.AdvancedInfo {
+    width: 2469px;
+}
+
+.AdvancedLeft {
+    
+}
+
+.AdvancedLefttop {
+    height: 1937px;
+}
+
+.AdvancedLefttopleft {
+    background-image: url(../img/sheet1/CharacterSheet_02.gif);
+    background-size: auto;
+    width: 345px;
+    height: 1937px;
+}
+
+.AdvancedLefttopright {
+
+}
+
+.AdvancedLefttopright_1 {
+    background-image: url(../img/sheet1/CharacterSheet_03.gif);
+    background-size: auto;
+    width: 498px;
+    height: 166px;
+}
+
+.AdvancedLefttopright_2 {
+    background-image: url(../img/sheet1/CharacterSheet_06.gif);
+    background-size: auto;
+    width: 498px;
+    height: 155px;
+}
+
+.AdvancedLefttopright_3 {
+    background-image: url(../img/sheet1/CharacterSheet_07.gif);
+    background-size: auto;
+    width: 498px;
+    height: 462px;
+}
+
+.AdvancedLefttopright_4 {
+    background-image: url(../img/sheet1/CharacterSheet_08.gif);
+    background-size: auto;
+    width: 498px;
+    height: 1154px;
+}
+
+.AdvancedLeftcenter {
+    background-image: url(../img/sheet1/CharacterSheet_11.gif);
+    background-size: auto;
+    width: 843px;
+    height: 142px;
+}
+
+.AdvancedLeftbottom {
+    background-image: url(../img/sheet1/CharacterSheet_13.gif);
+    background-size: auto;
+    width: 843px;
+    height: 682px;
+}
+
+.AdvancedCenter {
+
+}
+
+.AdvancedCentertop {
+    background-image: url(../img/sheet1/CharacterSheet_04.gif);
+    background-size: auto;
+    width: 792px;
+    height: 1074px;
+}
+
+.AdvancedCentercenter {
+    background-image: url(../img/sheet1/CharacterSheet_09.gif);
+    background-size: auto;
+    width: 792px;
+    height: 863px;
+}
+
+.AdvancedCenterbottom {
+    background-image: url(../img/sheet1/CharacterSheet_12.gif);
+    background-size: auto;
+    width: 792px;
+    height: 824px;
+}
+
+.AdvancedRight {
+
+}
+
+.AdvancedRighttop {
+    background-image: url(../img/sheet1/CharacterSheet_05.gif);
+    background-size: auto;
+    width: 834px;
+    height: 1074px;
+}
+
+.AdvancedRightbottom{
+    background-image: url(../img/sheet1/CharacterSheet_10.gif);
+    background-size: auto;
+    width: 834px;
+    height: 1687px;
+}

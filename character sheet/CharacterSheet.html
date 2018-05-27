@@ -1,39 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Character Sheet</title>
+    <link type="text/css" rel="stylesheet" href="./css/reset.css"></link>
     <link type="text/css" rel="stylesheet" href="./css/common.css"></link>
     <link type="text/css" rel="stylesheet" href="./css/basic.css"></link>
+    <link type="text/css" rel="stylesheet" href="./css/advanced.css"></link>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="./js/common.js"></script>
 </head>
+
 <body>
-    <div class="BasicInfo"></div>
-    <div class="AdvancedInfo">
-        <div class="AdvancedLeft fl">
-            <div class="AdvancedLefttop">
-                <div class="AdvancedLefttopleft fl"></div>
-                <div class="AdvancedLefttopright fl">
-                    <div class="AdvancedLefttopright_1"></div>
-                    <div class="AdvancedLefttopright_2"></div>
-                    <div class="AdvancedLefttopright_3"></div>
-                    <div class="AdvancedLefttopright_4"></div>
+    <div class="w1200 center">
+        <div class="SheetHeader img-responsive">
+            <div class="pos-abs w1200" style="height: 212px">
+                <div class="fl" style="width: 506px">
+                    <input class="CharacterName" type="text">
+                </div>
+                <div class="fl" style="width: 694px;">
+                    <div style="height: 100px;">
+                        <div class="fl">
+                            <div class="ClassAndLevel">
+                                <select class="Class fl" style="width: 150px" name="Class" id="Class">
+                                    <option value="Barbarian">Barbarian</option>
+                                    <option value="Bard">Bard</option>
+                                    <option value="Cleric">Cleric</option>
+                                    <option value="Druid">Druid</option>
+                                    <option value="Fighter">Fighter</option>
+                                    <option value="Monk">Monk</option>
+                                    <option value="Paladin">Paladin</option>
+                                    <option value="Ranger">Ranger</option>
+                                    <option value="Rogue">Rogue</option>
+                                    <option value="Sorcerer">Sorcerer</option>
+                                    <option value="Warlock">Warlock</option>
+                                    <option value="Wizard">Wizard</option>
+                                </select>
+                                <label class="Level fl" style="width: 59px" for="">1</label>
+                            </div>
+                        </div>
+                        <div class="fl">
+                            <select class="Background" style="width: 180px" name="Background" id="Background">
+                                <optgroup label="Acolyte">
+                                    <option value="Acolyte">Acolyte</option>
+                                </optgroup>
+                                <optgroup label="Charlatan">
+                                    <option value="Charlatan">Charlatan</option>
+                                </optgroup>
+                                <optgroup label="Criminal">
+                                    <option value="Criminal">Criminal</option>
+                                    <option value="Spy">Spy</option>
+                                </optgroup>
+                                <optgroup label="Entertainer">
+                                    <option value="Entertainer">Entertainer</option>
+                                    <option value="Gladiator">Gladiator</option>
+                                </optgroup>
+                                <optgroup label="Folk Hero">
+                                    <option value="Folk Hero">Folk Hero</option>
+                                </optgroup>
+                                <optgroup label="Guild Artisan">
+                                    <option value="Guild Artisan">Guild Artisan</option>
+                                    <option value="Guild Merchant">Guild Merchant</option>
+                                </optgroup>
+                                <optgroup label="Hermit">
+                                    <option value="Hermit">Hermit</option>
+                                </optgroup>
+                                <optgroup label="Noble">
+                                    <option value="Noble">Noble</option>
+                                    <option value="Knight">Knight</option>
+                                </optgroup>
+                                <optgroup label="Outlander">
+                                    <option value="Outlander">Outlander</option>
+                                </optgroup>
+                                <optgroup label="Sage">
+                                    <option value="Sage">Sage</option>
+                                </optgroup>
+                                <optgroup label="Sailor">
+                                    <option value="Sailor">Sailor</option>
+                                    <option value="Pirate">Pirate</option>
+                                </optgroup>
+                                <optgroup label="Soldier">
+                                    <option value="Soldier">Soldier</option>
+                                </optgroup>
+                                <optgroup label="Urchin">
+                                    <option value="Urchin">Urchin</option>
+                                </optgroup>
+
+                            </select>
+                        </div>
+                        <div class="fl">
+                            <input class="PlayerName" style="width: 186px" type="text">
+                        </div>
+                    </div>
+                    <div style="height: 112px;">
+                        <div class="fl">
+                            <select class="Race" style="width: 209px" name="Race" id="Race">
+                                <option value="Dwarf">Dwarf</option>
+                                <option value="Elf">Elf</option>
+                                <option value="Halfing">Halfing</option>
+                                <option value="Human">Human</option>
+                                <option value="Dragonborn">Dragonborn</option>
+                                <option value="Gnome">Gnome</option>
+                                <option value="Half-Elf">Half-Elf</option>
+                                <option value="Half-Orc">Half-Orc</option>
+                                <option value="Tiefling">Tiefling</option>
+                            </select>
+                        </div>
+                        <div class="fl">
+                            <select class="Alignment" style="width: 180px" name="Alignment" id="Alignment">
+                                <option value="LG">Lawful Good</option>
+                                <option value="NG">Neutral Good</option>
+                                <option value="CG">Chaotic Good</option>
+                                <option value="LN">Lawful Neutral</option>
+                                <option value="N">Neutral</option>
+                                <option value="CN">Chaotic Neutral</option>
+                                <option value="LE">Lawful Evil</option>
+                                <option value="NE">Neutral Evil</option>
+                                <option value="CE">Chaotic Evil</option>
+                            </select>
+                        </div>
+                        <div class="fl">
+                            <label class="ExperiencePoints" style="width: 186px" for="">0</label>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="AdvancedLeftcenter"></div>
-            <div class="AdvancedLeftbottom"></div>
+            <img src="./img/sheet1/CharacterSheet_01.gif" alt="">
         </div>
-        <div class="AdvancedCenter fl">
-            <div class="AdvancedCentertop"></div>
-            <div class="AdvancedCentercenter"></div>
-            <div class="AdvancedCenterbottom"></div>
-        </div>
-        <div class="AdvancedRight fl">
-            <div class="AdvancedRighttop"></div>
-            <div class="AdvancedRightbottom"></div>
+        <div class="SheetContainer">
+            <div class="AttributesAndProficienciesAndLanguage fl">
+                <div class="AttributesAndProficiencies">
+                    <div class="Attributes img-responsive fl">
+                        <div class="pos-abs" style="width:168px; height: 947px;">
+                            <div>
+                                <select class="CastAttributes" name="CastAttributes" id="CastAttributes">
+                                    <option value="22 Point Buy">22 Point Buy</option>
+                                    <option value="Original 3d6">Original 3d6</option>
+                                    <option value="4d6 best 3">4d6 best 3</option>
+                                    <option value="5d6 best 3">5d6 best 3</option>
+                                </select>
+                            </div>
+                            <div style="height: 20px;"></div>
+                            <div class="Strength">
+                                <label class="Value" for="">14</label>
+                                <label class="Modifier" for="">+2</label>
+                            </div>
+                            <div class="Dexterity">
+                                <label class="Value" for=""></label>
+                                <label class="Modifier" for=""></label>
+                            </div>
+                            <div class="Constitution">
+                                <label class="Value" for=""></label>
+                                <label class="Modifier" for=""></label>
+                            </div>
+                            <div class="Intellgence">
+                                <label class="Value" for=""></label>
+                                <label class="Modifier" for=""></label>
+                            </div>
+                            <div class="Wisdom">
+                                <label class="Value" for=""></label>
+                                <label class="Modifier" for=""></label>
+                            </div>
+                            <div class="Charisma">
+                                <label class="Value" for=""></label>
+                                <label class="Modifier" for=""></label>
+                            </div>
+                            <div style="height: 38px;"></div>
+                        </div>
+                        <img src="./img/sheet1/CharacterSheet_02.gif" alt="">
+                    </div>
+                    <div class="Proficiencies fl">
+                        <div class="Inspiration img-responsive">
+                            <div class="pos-abs" style="width: 241px">
+                                <input class="Value" type="text">
+                            </div>
+                            <img src="./img/sheet1/CharacterSheet_03.gif" alt="">
+                        </div>
+                        <div class="ProficiencyBonus img-responsive">
+                            <div class="pos-abs" style="width: 241px">
+                                <label class="Value" for="">+2</label>
+                            </div>
+                            <img src="./img/sheet1/CharacterSheet_06.gif" alt="">
+                        </div>
+                        <div class="SavingThrows img-responsive">
+                            <div class="pos-abs" style="width: 241px">
+                                <ul>
+                                    <li>
+                                        <input class="fl" type="radio" name="StrengthBonus" id="StrengthBonus">
+                                        <label class="fl" for="">+4</label>
+                                    </li>
+                                    <li>
+                                        <input class="fl" type="radio" name="DexterityBonus" id="DexterityBonus">
+                                        <label class="fl" for=""></label>
+                                    </li>
+                                    <li>
+                                        <input class="fl" type="radio" name="ConstitutionBonus" id="ConstitutionBonus">
+                                        <label class="fl" for=""></label>
+                                    </li>
+                                    <li>
+                                        <input class="fl" type="radio" name="IntelligenceBonus" id="IntelligenceBonus">
+                                        <label class="fl" for=""></label>
+                                    </li>
+                                    <li>
+                                        <input class="fl" type="radio" name="WisdomBonus" id="WisdomBonus">
+                                        <label class="fl" for=""></label>
+                                    </li>
+                                    <li>
+                                        <input class="fl" type="radio" name="CharismaBonus" id="CharismaBonus">
+                                        <label class="fl" for=""></label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <img src="./img/sheet1/CharacterSheet_07.gif" alt="">
+                        </div>
+                        <div class="Skills img-responsive">
+                            <div class="pos-abs" style="width: 241px">
+                                <ul>
+                                    <li>
+                                        <input type="radio" name="AcrobaticsBonus" id="AcrobaticsBonus" class="fl">
+                                        <label for="Dex" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="AnimalHandlingBonus" id="AnimalHandlingBonus" class="fl">
+                                        <label for="Wis" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="ArcanaBonus" id="ArcanaBonus" class="fl">
+                                        <label for="Int" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="AthleticsBonus" id="AthleticsBonus" class="fl">
+                                        <label for="Str" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="DeceptionBonus" id="DeceptionBonus" class="fl">
+                                        <label for="Cha" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="HistoryBonus" id="HistoryBonus" class="fl">
+                                        <label for="Int" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="InsightBonus" id="InsightBonus" class="fl">
+                                        <label for="Wis" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="IntimidationBonus" id="IntimidationBonus" class="fl">
+                                        <label for="Cha" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="InvestigationBonus" id="InvestigationBonus" class="fl">
+                                        <label for="Int" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="MedicineBonus" id="MedicineBonus" class="fl">
+                                        <label for="Wis" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="NatureBonus" id="NatureBonus" class="fl">
+                                        <label for="Int" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="PreceptionBonus" id="PreceptionBonus" class="fl">
+                                        <label for="Wis" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="PerformanceBonus" id="PerformanceBonus" class="fl">
+                                        <label for="Cha" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="PersuasionBonus" id="PersuasionBonus" class="fl">
+                                        <label for="Cha" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="ReligionBonus" id="ReligionBonus" class="fl">
+                                        <label for="Int" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="SleightofHandBonus" id="SleightofHandBonus" class="fl">
+                                        <label for="Dex" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="StealthBonus" id="StealthBonus" class="fl">
+                                        <label for="Dex" class="fl"></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="SurvivalBonus" id="SurvivalBonus" class="fl">
+                                        <label for="Wis" class="fl"></label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <img src="./img/sheet1/CharacterSheet_08.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="PassiveWisdom img-responsive">
+                    <div class="pos-abs" style="width: 410px">
+                        <label for="PreceptionBonus" class="Value">12</label>
+                    </div>
+                    <img src="./img/sheet1/CharacterSheet_11.gif" alt="">
+                </div>
+                <div class="OtherProficienciesAndLanguage img-responsive">
+                    <img src="./img/sheet1/CharacterSheet_13.gif" alt="">
+                </div>
+            </div>
+            <div class="HitPointAndAttackAndEquipment fl">
+                <div class="HitPointAndOther img-responsive">
+                    <img src="./img/sheet1/CharacterSheet_04.gif" alt="">
+                </div>
+                <div class="AttackAndSpellCasting img-responsive">
+                    <img src="./img/sheet1/CharacterSheet_09.gif" alt="">
+                </div>
+                <div class="Equipment img-responsive">
+                    <img src="./img/sheet1/CharacterSheet_12.gif" alt="">
+                </div>
+            </div>
+            <div class="CharacteristicsAndFeatureAndTraits fl">
+                <div class="Characteristics img-responsive">
+                    <img src="./img/sheet1/CharacterSheet_05.gif" alt="">
+                </div>
+                <div class="FeatureAndTraits img-responsive">
+                    <img src="./img/sheet1/CharacterSheet_10.gif" alt="">
+                </div>
+            </div>
         </div>
     </div>
 </body>
+
 </html>

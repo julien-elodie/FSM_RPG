@@ -1,114 +1,55 @@
-.BasicInfo {
-    background-image: url(../img/sheet1/CharacterSheet_01.gif);
-    background-size: auto;
-    width: 2469px;
-    height: 434px;
+.SheetHeader {}
+
+.SheetContainer {
+    width: 100%;
 }
 
-.AdvancedInfo {
-    width: 2469px;
+.AttributesAndProficienciesAndLanguage {
+    width: 34.14%;
 }
 
-.AdvancedLeft {
-    
+.AttributesAndProficiencies {
+    height: 100%;
 }
 
-.AdvancedLefttop {
-    height: 1937px;
+.Attributes {
+    width: 41.12%;
 }
 
-.AdvancedLefttopleft {
-    background-image: url(../img/sheet1/CharacterSheet_02.gif);
-    background-size: auto;
-    width: 345px;
-    height: 1937px;
+.Proficiencies {
+    width: 58.88%;
 }
 
-.AdvancedLefttopright {
+.Inspiration {}
 
+.ProficiencyBonus {}
+
+.SavingThrows {}
+
+.Skills {}
+
+.PassiveWisdom {
+    width: 100%;
 }
 
-.AdvancedLefttopright_1 {
-    background-image: url(../img/sheet1/CharacterSheet_03.gif);
-    background-size: auto;
-    width: 498px;
-    height: 166px;
+.OtherProficienciesAndLanguage {
+    width: 100%;
 }
 
-.AdvancedLefttopright_2 {
-    background-image: url(../img/sheet1/CharacterSheet_06.gif);
-    background-size: auto;
-    width: 498px;
-    height: 155px;
+.HitPointAndAttackAndEquipment {
+    width: 32.07%;
 }
 
-.AdvancedLefttopright_3 {
-    background-image: url(../img/sheet1/CharacterSheet_07.gif);
-    background-size: auto;
-    width: 498px;
-    height: 462px;
+.HitPointAndOther {}
+
+.AttackAndSpellCasting {}
+
+.Equipment {}
+
+.CharacteristicsAndFeatureAndTraits {
+    width: 33.78%;
 }
 
-.AdvancedLefttopright_4 {
-    background-image: url(../img/sheet1/CharacterSheet_08.gif);
-    background-size: auto;
-    width: 498px;
-    height: 1154px;
-}
+.Characteristics {}
 
-.AdvancedLeftcenter {
-    background-image: url(../img/sheet1/CharacterSheet_11.gif);
-    background-size: auto;
-    width: 843px;
-    height: 142px;
-}
-
-.AdvancedLeftbottom {
-    background-image: url(../img/sheet1/CharacterSheet_13.gif);
-    background-size: auto;
-    width: 843px;
-    height: 682px;
-}
-
-.AdvancedCenter {
-
-}
-
-.AdvancedCentertop {
-    background-image: url(../img/sheet1/CharacterSheet_04.gif);
-    background-size: auto;
-    width: 792px;
-    height: 1074px;
-}
-
-.AdvancedCentercenter {
-    background-image: url(../img/sheet1/CharacterSheet_09.gif);
-    background-size: auto;
-    width: 792px;
-    height: 863px;
-}
-
-.AdvancedCenterbottom {
-    background-image: url(../img/sheet1/CharacterSheet_12.gif);
-    background-size: auto;
-    width: 792px;
-    height: 824px;
-}
-
-.AdvancedRight {
-
-}
-
-.AdvancedRighttop {
-    background-image: url(../img/sheet1/CharacterSheet_05.gif);
-    background-size: auto;
-    width: 834px;
-    height: 1074px;
-}
-
-.AdvancedRightbottom{
-    background-image: url(../img/sheet1/CharacterSheet_10.gif);
-    background-size: auto;
-    width: 834px;
-    height: 1687px;
-}
+.FeatureAndTraits {}

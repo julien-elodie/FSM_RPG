@@ -1,0 +1,137 @@
+.CharacterName {
+    width: 350px;
+    height: 38px;
+    margin: 92px 78px 82px 78px;
+    font-size: 38px;
+}
+
+.Background,
+.PlayerName {
+    height: 30px;
+    margin: 64px 0px 0px 20px;
+    font-size: 30px;
+}
+
+.ClassAndLevel {
+    height: 36px;
+    margin: 64px 0px 0px 20px;
+    font-size: 30px;
+}
+
+.Background {
+    height: 36px;
+    font-size: 22px;
+}
+
+.Class {
+    height: 34px;
+    font-size: 28px;
+}
+
+.Level {
+    display: block;
+    height: 36px;
+    font-size: 36px;
+}
+
+.Race,
+.Alignment {
+    height: 36px;
+    margin: 16px 0px 45px 20px;
+    font-size: 30px;
+}
+
+.Alignment {
+    font-size: 22px;
+}
+
+.ExperiencePoints {
+    display: block;
+    height: 30px;
+    margin: 19px 2px 48px 22px;
+    font-size: 30px;
+}
+
+.CastAttributes {
+    width: 125px;
+    margin-left: 30px;
+}
+
+.Strength,
+.Dexterity,
+.Constitution,
+.Intellgence,
+.Wisdom,
+.Charisma {
+    width: 168px;
+    height: 145px;
+}
+
+.Strength>.Value,
+.Dexterity>.Value,
+.Constitution>.Value,
+.Intellgence>.Value,
+.Wisdom>.Value,
+.Charisma>.Value {
+    display: block;
+    margin: 0px 20px 0px 56px;
+    padding-top: 32px;
+    width: 86px;
+    height: 54px;
+    font-size: 54px;
+}
+
+.Strength>.Modifier,
+.Dexterity>.Modifier,
+.Constitution>.Modifier,
+.Intellgence>.Modifier,
+.Wisdom>.Modifier,
+.Charisma>.Modifier {
+    display: block;
+    margin: 12px 44px 2px 74px;
+    width: 50px;
+    height: 28px;
+    font-size: 28px;
+}
+
+.Inspiration>div>.Value {
+    width: 40px;
+    height: 40px;
+    margin: 18.5px 191px 24.5px 11px;
+    font-size: 36px
+}
+
+.ProficiencyBonus>div>.Value {
+    display: block;
+    width: 48px;
+    height: 32px;
+    margin: 20px 182px 25px 12px;
+    font-size: 32px
+}
+
+.SavingThrows>div>ul {
+    margin: 22px 0px 40px 0px;
+}
+
+.Skills>div>ul {
+    margin: 31px 0px 40px 0px;
+}
+
+.SavingThrows>div>ul>li, .Skills>div>ul>li {
+    height: 27.2px;
+    margin-left: 15px;
+}
+
+.SavingThrows>div>ul>li>label, .Skills>div>ul>li>label {
+    display: block;
+    margin-left: 8px;
+    width: 30px;
+}
+
+.PassiveWisdom>div>.Value {
+    display: block;
+    width: 44px;
+    height: 36px;
+    margin: 14px 314px 20px 48px;
+    font-size: 32px
+}

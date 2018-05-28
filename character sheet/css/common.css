@@ -43,3 +43,9 @@ select {
     border-color: transparent;
     background-color: aliceblue;
 }
+
+textarea {
+    resize: none;
+    border-color: transparent;
+    background-color: aliceblue;
+}

@@ -11,7 +11,9 @@
     <link type="text/css" rel="stylesheet" href="./css/basic.css"></link>
     <link type="text/css" rel="stylesheet" href="./css/advanced.css"></link>
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/helper.js"></script>
     <script type="text/javascript" src="./js/common.js"></script>
+    <script type="text/javascript" src="./js/advanced.js"></script>
 </head>
 
 <body>
@@ -25,6 +27,7 @@
                     <div style="height: 100px;">
                         <div class="fl">
                             <div class="ClassAndLevel">
+                                <!--TODO-->
                                 <select class="Class fl" style="width: 150px" name="Class" id="Class">
                                     <option value="Barbarian">Barbarian</option>
                                     <option value="Bard">Bard</option>
@@ -39,7 +42,7 @@
                                     <option value="Warlock">Warlock</option>
                                     <option value="Wizard">Wizard</option>
                                 </select>
-                                <label class="Level fl" style="width: 59px" for="">1</label>
+                                <label class="Level fl" style="width: 59px" for=""></label>
                             </div>
                         </div>
                         <div class="fl">
@@ -123,7 +126,7 @@
                             </select>
                         </div>
                         <div class="fl">
-                            <label class="ExperiencePoints" style="width: 186px" for="">0</label>
+                            <input class="ExperiencePoints" style="width: 186px" type="text" readonly="readonly" value="0">
                         </div>
                     </div>
                 </div>
@@ -145,28 +148,28 @@
                             </div>
                             <div style="height: 20px;"></div>
                             <div class="Strength">
-                                <label class="Value" for="">14</label>
-                                <label class="Modifier" for="">+2</label>
+                                <label class="Value" for="">10</label>
+                                <label class="Modifier" for="">0</label>
                             </div>
                             <div class="Dexterity">
-                                <label class="Value" for=""></label>
-                                <label class="Modifier" for=""></label>
+                                <label class="Value" for="">10</label>
+                                <label class="Modifier" for="">0</label>
                             </div>
                             <div class="Constitution">
-                                <label class="Value" for=""></label>
-                                <label class="Modifier" for=""></label>
+                                <label class="Value" for="">10</label>
+                                <label class="Modifier" for="">0</label>
                             </div>
                             <div class="Intellgence">
-                                <label class="Value" for=""></label>
-                                <label class="Modifier" for=""></label>
+                                <label class="Value" for="">10</label>
+                                <label class="Modifier" for="">0</label>
                             </div>
                             <div class="Wisdom">
-                                <label class="Value" for=""></label>
-                                <label class="Modifier" for=""></label>
+                                <label class="Value" for="">10</label>
+                                <label class="Modifier" for="">0</label>
                             </div>
                             <div class="Charisma">
-                                <label class="Value" for=""></label>
-                                <label class="Modifier" for=""></label>
+                                <label class="Value" for="">10</label>
+                                <label class="Modifier" for="">0</label>
                             </div>
                             <div style="height: 38px;"></div>
                         </div>
@@ -181,7 +184,7 @@
                         </div>
                         <div class="ProficiencyBonus img-responsive">
                             <div class="pos-abs" style="width: 241px">
-                                <label class="Value" for="">+2</label>
+                                <label class="Value" for=""></label>
                             </div>
                             <img src="./img/sheet1/CharacterSheet_06.gif" alt="">
                         </div>
@@ -190,27 +193,27 @@
                                 <ul>
                                     <li>
                                         <input class="fl" type="radio" name="StrengthBonus" id="StrengthBonus">
-                                        <label class="fl" for="">+4</label>
+                                        <label class="fl" for="">0</label>
                                     </li>
                                     <li>
                                         <input class="fl" type="radio" name="DexterityBonus" id="DexterityBonus">
-                                        <label class="fl" for=""></label>
+                                        <label class="fl" for="">0</label>
                                     </li>
                                     <li>
                                         <input class="fl" type="radio" name="ConstitutionBonus" id="ConstitutionBonus">
-                                        <label class="fl" for=""></label>
+                                        <label class="fl" for="">0</label>
                                     </li>
                                     <li>
                                         <input class="fl" type="radio" name="IntelligenceBonus" id="IntelligenceBonus">
-                                        <label class="fl" for=""></label>
+                                        <label class="fl" for="">0</label>
                                     </li>
                                     <li>
                                         <input class="fl" type="radio" name="WisdomBonus" id="WisdomBonus">
-                                        <label class="fl" for=""></label>
+                                        <label class="fl" for="">0</label>
                                     </li>
                                     <li>
                                         <input class="fl" type="radio" name="CharismaBonus" id="CharismaBonus">
-                                        <label class="fl" for=""></label>
+                                        <label class="fl" for="">0</label>
                                     </li>
                                 </ul>
                             </div>
@@ -221,75 +224,75 @@
                                 <ul>
                                     <li>
                                         <input type="radio" name="AcrobaticsBonus" id="AcrobaticsBonus" class="fl">
-                                        <label for="Dex" class="fl"></label>
+                                        <label for="Dex" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="AnimalHandlingBonus" id="AnimalHandlingBonus" class="fl">
-                                        <label for="Wis" class="fl"></label>
+                                        <label for="Wis" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="ArcanaBonus" id="ArcanaBonus" class="fl">
-                                        <label for="Int" class="fl"></label>
+                                        <label for="Int" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="AthleticsBonus" id="AthleticsBonus" class="fl">
-                                        <label for="Str" class="fl"></label>
+                                        <label for="Str" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="DeceptionBonus" id="DeceptionBonus" class="fl">
-                                        <label for="Cha" class="fl"></label>
+                                        <label for="Cha" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="HistoryBonus" id="HistoryBonus" class="fl">
-                                        <label for="Int" class="fl"></label>
+                                        <label for="Int" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="InsightBonus" id="InsightBonus" class="fl">
-                                        <label for="Wis" class="fl"></label>
+                                        <label for="Wis" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="IntimidationBonus" id="IntimidationBonus" class="fl">
-                                        <label for="Cha" class="fl"></label>
+                                        <label for="Cha" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="InvestigationBonus" id="InvestigationBonus" class="fl">
-                                        <label for="Int" class="fl"></label>
+                                        <label for="Int" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="MedicineBonus" id="MedicineBonus" class="fl">
-                                        <label for="Wis" class="fl"></label>
+                                        <label for="Wis" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="NatureBonus" id="NatureBonus" class="fl">
-                                        <label for="Int" class="fl"></label>
+                                        <label for="Int" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="PreceptionBonus" id="PreceptionBonus" class="fl">
-                                        <label for="Wis" class="fl"></label>
+                                        <label for="Wis" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="PerformanceBonus" id="PerformanceBonus" class="fl">
-                                        <label for="Cha" class="fl"></label>
+                                        <label for="Cha" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="PersuasionBonus" id="PersuasionBonus" class="fl">
-                                        <label for="Cha" class="fl"></label>
+                                        <label for="Cha" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="ReligionBonus" id="ReligionBonus" class="fl">
-                                        <label for="Int" class="fl"></label>
+                                        <label for="Int" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="SleightofHandBonus" id="SleightofHandBonus" class="fl">
-                                        <label for="Dex" class="fl"></label>
+                                        <label for="Dex" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="StealthBonus" id="StealthBonus" class="fl">
-                                        <label for="Dex" class="fl"></label>
+                                        <label for="Dex" class="fl">0</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="SurvivalBonus" id="SurvivalBonus" class="fl">
-                                        <label for="Wis" class="fl"></label>
+                                        <label for="Wis" class="fl">0</label>
                                     </li>
                                 </ul>
                             </div>
@@ -299,19 +302,80 @@
                 </div>
                 <div class="PassiveWisdom img-responsive">
                     <div class="pos-abs" style="width: 410px">
-                        <label for="PreceptionBonus" class="Value">12</label>
+                        <label for="PreceptionBonus" class="Value">10</label>
                     </div>
                     <img src="./img/sheet1/CharacterSheet_11.gif" alt="">
                 </div>
                 <div class="OtherProficienciesAndLanguage img-responsive">
+                    <div class="pos-abs" style="width: 410px">
+                        <div class="Content">
+                            <button class="pos-abs AddProficiencies">Add</button>
+                            <label for="OtherProficiencies">Other Proficiencies: </label>
+                            <hr>
+                            <button class="pos-abs AddLanguage">Add</button>
+                            <label for="Language">Language: </label>
+                        </div>
+                    </div>
                     <img src="./img/sheet1/CharacterSheet_13.gif" alt="">
                 </div>
             </div>
             <div class="HitPointAndAttackAndEquipment fl">
                 <div class="HitPointAndOther img-responsive">
+                    <div class="pos-abs" style="width: 385px">
+                        <div style="height: 145px;">
+                            <label class="ArmorClass fl" for="">10</label>
+                            <!--TODO-->
+                            <label class="Initiative fl" for="">0</label>
+                            <label class="Speed fl" for="">0</label>
+                        </div>
+                        <div style="height: 132px;">
+                            <label for="" class="HitPointMaximum">10</label>
+                            <label for="" class="CurrentHitPoints">8</label>
+                        </div>
+                        <div style="height: 112px;">
+                            <label for="" class="TemporaryHitPoints">0</label>
+                        </div>
+                        <div>
+                            <div class="fl" style="width: 192.5px">
+                                <label class="TotalHitDice" for="">1d10</label>
+                                <label class="HitDice" for=""></label>
+                            </div>
+                            <div class="fl" style="width: 192.5px">
+                                <div class="Successes">
+                                    <input type="radio" name="" id="">
+                                    <input type="radio" name="" id="">
+                                    <input type="radio" name="" id="">
+                                </div>
+                                <div class="Failures">
+                                    <input type="radio" name="" id="">
+                                    <input type="radio" name="" id="">
+                                    <input type="radio" name="" id="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <img src="./img/sheet1/CharacterSheet_04.gif" alt="">
                 </div>
                 <div class="AttackAndSpellCasting img-responsive">
+                    <div class="pos-abs" style="width: 385px">
+                        <ul>
+                            <li>
+                                <label class="Name fl">巨斧</label>
+                                <label class="AtkBonus fl">+5</label>
+                                <label class="Damage fl">1d12+3 挥砍</label>
+                            </li>
+                            <li>
+                                <label class="Name fl">手斧</label>
+                                <label class="AtkBonus fl">+4</label>
+                                <label class="Damage fl">1d6+2 挥砍</label>
+                            </li>
+                            <li>
+                                <label class="Name fl"></label>
+                                <label class="AtkBonus fl"></label>
+                                <label class="Damage fl"></label>
+                            </li>
+                        </ul>
+                    </div>
                     <img src="./img/sheet1/CharacterSheet_09.gif" alt="">
                 </div>
                 <div class="Equipment img-responsive">

@@ -46,9 +46,8 @@
 }
 
 .ExperiencePoints {
-    display: block;
     height: 30px;
-    margin: 19px 2px 48px 22px;
+    margin: 16px 0px 45px 20px;
     font-size: 30px;
 }
 
@@ -117,12 +116,14 @@
     margin: 31px 0px 40px 0px;
 }
 
-.SavingThrows>div>ul>li, .Skills>div>ul>li {
+.SavingThrows>div>ul>li,
+.Skills>div>ul>li {
     height: 27.2px;
     margin-left: 15px;
 }
 
-.SavingThrows>div>ul>li>label, .Skills>div>ul>li>label {
+.SavingThrows>div>ul>li>label,
+.Skills>div>ul>li>label {
     display: block;
     margin-left: 8px;
     width: 30px;
@@ -134,4 +135,155 @@
     height: 36px;
     margin: 14px 314px 20px 48px;
     font-size: 32px
+}
+
+.OtherProficienciesAndLanguage>div>.Content {
+    width: 347px;
+    height: 264px;
+    margin: 18px 9px 50px 46px;
+    font-size: 24px;
+    text-align: left;
+}
+
+.OtherProficienciesAndLanguage>div>.Content>hr {
+    margin: 0px;
+}
+
+.OtherProficienciesAndLanguage>div>.Content>label {
+    display: block;
+    width: 348px;
+    height: 131px;
+}
+
+.OtherProficienciesAndLanguage>div>.Content>button {
+    width: 60px;
+    height: 24px;
+}
+
+.OtherProficienciesAndLanguage>div>.Content>.AddProficiencies {
+    right: 20px;
+    bottom: 188px;
+}
+
+.OtherProficienciesAndLanguage>div>.Content>.AddLanguage {
+    right: 20px;
+    bottom: 55px;
+}
+
+.ArmorClass {
+    display: block;
+    width: 58px;
+    height: 50px;
+    margin: 45px 27px 45px 45px;
+    font-size: 48px
+}
+
+.Initiative {
+    display: block;
+    width: 84px;
+    height: 64px;
+    margin: 44px 12px 30px 16px;
+    font-size: 64px
+}
+
+.Speed {
+    display: block;
+    width: 84px;
+    height: 64px;
+    margin: 44px 12px 30px 22px;
+    font-size: 64px
+}
+
+.HitPointMaximum {
+    display: block;
+    width: 185px;
+    height: 20px;
+    margin: 0px 40px 5px 160px;
+    padding-top: 15px;
+}
+
+.CurrentHitPoints {
+    display: block;
+    width: 320px;
+    height: 70px;
+    margin: 5px 34px 17px 32px;
+    font-size: 70px
+}
+
+.TemporaryHitPoints {
+    display: block;
+    width: 320px;
+    height: 70px;
+    margin: 0 34px 29px 32px;
+    padding-top: 13px;
+    font-size: 70px
+}
+
+.TotalHitDice {
+    display: block;
+    width: 104px;
+    height: 15px;
+    margin: 0 18.5px 5px 70px;
+    padding-top: 19px;
+    font-size: 15px
+}
+
+.HitDice {
+    display: block;
+    width: 136px;
+    height: 48px;
+    margin: 0 18.5px 27px 38px;
+    font-size: 48px
+}
+
+.Successes {
+    width: 80px;
+    height: 22px;
+    margin: 0px 36.5px 5px 76px;
+    padding-top: 21px;
+}
+
+.Failures {
+    width: 80px;
+    height: 22px;
+    margin: 0px 35.5px 5px 77px;
+    padding-top: 4px;
+}
+
+.Successes>input, .Failures>input {
+    width: 15px;
+    height: 15px;
+    margin-left: 3.5px;
+}
+
+.AttackAndSpellCasting>div>ul {
+    padding-top: 27px;
+}
+
+.AttackAndSpellCasting>div>ul>li {
+    height: 41px;
+}
+
+.AttackAndSpellCasting>div>ul>li>.Name {
+    display: block;
+    width: 128px;
+    height: 20px;
+    margin: 10px 5px 11px 25px;
+    font-size: 20px
+}
+
+.AttackAndSpellCasting>div>ul>li>.AtkBonus {
+    display: block;
+    width: 62px;
+    height: 20px;
+    margin: 10px 5px 11px 5px;
+    font-size: 20px
+}
+
+.AttackAndSpellCasting>div>ul>li>.Damage {
+    display: block;
+    width: 124px;
+    height: 18px;
+    margin: 11px 26px 12px 5px;
+    font-size: 18px
 }
